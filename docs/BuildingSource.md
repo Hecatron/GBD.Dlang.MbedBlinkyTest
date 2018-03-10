@@ -71,6 +71,15 @@ The end result should be within:
 .\BUILD\LPC1768\GCC_ARM\GBD.Dlang.MbedBlinkyTest.elf
 ```
 
+THe build script is actually running
+```
+ldc2 -gc -mtriple=thumb-none-linux-eabi -mcpu=cortex-m3 --od=. -c -betterC main.d
+```
+The -gc option is important so that we can single step / debug the D code within Visual Studio Code
+
+  * https://forum.dlang.org/thread/op.u9gqy1z5tuzx1w@cybershadow.mshome.net
+
+
 ## Flashing the source
 
 This can be done within Visual Studio Code by using the "launch" mode of the GDB Cortex-M plugin
