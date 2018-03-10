@@ -1,0 +1,4 @@
+ROOT=.
+TARGET=LPC1768
+TOOLCHAIN=GCC_ARM
+GCC_ARM_PATH=C:\Program Files (x86)\GNU Tools ARM Embedded\7 2017-q4-major\bin

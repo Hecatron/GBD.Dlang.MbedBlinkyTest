@@ -1,0 +1,75 @@
+# Setting up Debugging via JLink / OpenOCD
+
+## Setting up Cortex-M GDB
+
+
+### Setting up JLink / Segger
+
+We can specify a debug profile wthin launch.json, which can then be used within Visual Studio code
+The "attach" option doesn't seem to need the JLink gdb server running (I think it launches it's own)
+the "launch" option I believe also flashes / updates the code on the device
+
+So far I've managed to get this to work okay with the below settings
+
+```
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug (JLink Segger)",
+            "type": "cortex-debug",
+            "request": "attach",
+            "servertype": "jlink",
+            "cwd": "${workspaceRoot}",
+            "executable": "./BUILD/LPC1768/GCC_ARM/GBD.Dlang.MbedBlinkyTest.elf",
+            "device": "LPC1769",
+            "interface": "swd",
+        }
+    ]
+}
+```
+
+
+### Setting up OpenOCD / USB
+
+I've tried to get this to work under Visual Studio Code / the GDB Plugin for Cortex-M
+But all I seem to be getting is **Failed to launch OpenOCD GDB server: Timeout**
+with the following configuration
+
+  * https://github.com/Marus/cortex-debug/issues/27
+
+```
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug (OpenOCD USB)",
+            "type": "cortex-debug",
+            "request": "launch",
+            "device": "LPC1769",
+            "servertype": "openocd",
+            "cwd": "${workspaceRoot}",
+            "executable": "./BUILD/LPC1768/GCC_ARM/GBD.Dlang.MbedBlinkyTest.elf",
+            "configFiles": [
+                "./scripts/openocd_configs/usb_boardconf.cfg"
+            ]
+        },
+    ]
+}
+```
+
+That being said I have managed to get openocd working via the command line
+
+  * https://stackoverflow.com/questions/38033130/how-to-use-the-gdb-gnu-debugger-and-openocd-for-microcontroller-debugging-fr
+
+  * **scripts\openocd_flash.bat** - to flash the firmware to the board
+  * **scripts\openocd_startserver.bat** - to start the openocd server
+    (listens for telnet connections on port 4444, and gdb connections on 3333)
+  * **scripts\openocd_startgdb.bat** - this starts a ARM gdb session which connects to the openocd server
+
+So i suspect there may be a bug in relation to the GDB Arm Cortex plugin for Visual Studio code
+
+
+## Non Cortex-M GDB
+
+TODO try the non cortex-M version of GDB with JLink

@@ -1,0 +1,30 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug (JLink Segger)",
+            "type": "cortex-debug",
+            "request": "launch",
+            "servertype": "jlink",
+            "cwd": "${workspaceRoot}",
+            "executable": "./BUILD/LPC1768/GCC_ARM/GBD.Dlang.MbedBlinkyTest.elf",
+            "device": "LPC1769",
+            "interface": "swd",
+        },
+        {
+            "name": "Debug (OpenOCD USB)",
+            "type": "cortex-debug",
+            "request": "launch",
+            "device": "LPC1769",
+            "servertype": "openocd",
+            "cwd": "${workspaceRoot}",
+            "executable": "./BUILD/LPC1768/GCC_ARM/GBD.Dlang.MbedBlinkyTest.elf",
+            "configFiles": [
+                "./scripts/openocd_configs/jlink_boardconf.cfg"
+            ]
+        },
+    ]
+}
