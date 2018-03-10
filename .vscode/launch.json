@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Debug (JLink Segger)",
+            "name": "Debug (JLink Segger) - Cortex GDB",
             "type": "cortex-debug",
             "request": "launch",
             "servertype": "jlink",
@@ -15,7 +15,7 @@
             "interface": "swd",
         },
         {
-            "name": "Debug (OpenOCD USB)",
+            "name": "Debug (OpenOCD USB) - Cortex GDB",
             "type": "cortex-debug",
             "request": "launch",
             "device": "LPC1769",
@@ -23,8 +23,36 @@
             "cwd": "${workspaceRoot}",
             "executable": "./BUILD/LPC1768/GCC_ARM/GBD.Dlang.MbedBlinkyTest.elf",
             "configFiles": [
-                "./scripts/openocd_configs/jlink_boardconf.cfg"
+                "${workspaceRoot}/scripts/openocd_configs/usb_boardconf.cfg"
             ]
+        },
+        {
+            "name": "Debug (OpenOCD USB) - Attach to GDB",
+            "type": "gdb",
+            "request": "attach",
+            "executable": "${workspaceRoot}/BUILD/LPC1768/GCC_ARM/GBD.Dlang.MbedBlinkyTest.elf",
+            "target": ":3333",
+            "remote": true,
+            "cwd": "${workspaceRoot}",
+            "gdbpath": "arm-none-eabi-gdb.exe",
+            "autorun": [
+                "monitor reset halt",
+                "load ./BUILD/LPC1768/GCC_ARM/GBD.Dlang.MbedBlinkyTest.elf"
+             ]
+        },
+        {
+            "name": "Debug (JLink Segger) - Attach to GDB",
+            "type": "gdb",
+            "request": "attach",
+            "executable": "${workspaceRoot}/BUILD/LPC1768/GCC_ARM/GBD.Dlang.MbedBlinkyTest.elf",
+            "target": ":2331",
+            "remote": true,
+            "cwd": "${workspaceRoot}",
+            "gdbpath": "arm-none-eabi-gdb.exe",
+            "autorun": [
+                "monitor reset halt",
+                "load ./BUILD/LPC1768/GCC_ARM/GBD.Dlang.MbedBlinkyTest.elf"
+             ]
         },
     ]
 }

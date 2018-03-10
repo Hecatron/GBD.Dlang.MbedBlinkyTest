@@ -72,4 +72,28 @@ So i suspect there may be a bug in relation to the GDB Arm Cortex plugin for Vis
 
 ## Non Cortex-M GDB
 
+### Setting up OpenOCD / USB
+
+If we use the regular non cortex-m specific gdb plugin for Visual Studio code
+then this seems to work okay with OpenOCD, but we need to start openocd seperatley before debugging
+
+  * https://hackaday.io/project/21045-stm32-bluepill-frameworks-evaluation/log/57272-vscode-configuring-and-debugging
+
+```
+        {
+            "name": "Debug (OpenOCD USB) - Attach to GDB",
+            "type": "gdb",
+            "request": "attach",
+            "executable": "${workspaceRoot}/BUILD/LPC1768/GCC_ARM/GBD.Dlang.MbedBlinkyTest.elf",
+            "target": ":3333",
+            "remote": true,
+            "cwd": "${workspaceRoot}",
+            "gdbpath": "arm-none-eabi-gdb.exe",
+            "autorun": [
+                "monitor reset halt",
+                "load ${workspaceRoot}/BUILD/LPC1768/GCC_ARM/GBD.Dlang.MbedBlinkyTest.elf"
+             ]
+        },
+```
+
 TODO try the non cortex-M version of GDB with JLink

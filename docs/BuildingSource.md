@@ -23,6 +23,8 @@ src/dtest2/
 By default mbed includes a Real Time OS for multiple threads etc.
 In this case to keep things simple from a debugging point of view we can turn that off by including the following into the .mbedignore file
 
+  * https://os.mbed.com/blog/entry/Reducing-memory-usage-by-tuning-RTOS-con/
+
 ```
 mbed-os/rtos/*
 mbed-os/features/FEATURE_CLIENT/*
@@ -35,6 +37,22 @@ mbed-os/features/netsocket/*
 mbed-os/features/storage/*
 mbed-os/events/*
 ```
+
+### Issue with RTOS
+
+For some reason I'm seeing a lockup / forced breakpoint (SIGBREAK) when using the RTOS and calling wait
+this might be related to DEVICE_SEMIHOST
+
+  * https://github.com/ARMmbed/mbed-os/issues/6317
+
+Current workaround is to make sure the below is excluded at bare minimum
+```
+mbed-os/rtos/*
+mbed-os/features/FEATURE_LWIP/*
+mbed-os/features/frameworks/*
+mbed-os/features/netsocket/*
+```
+
 
 ## Building the Source
 
