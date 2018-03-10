@@ -1,9 +1,6 @@
 # Readme
 
 This is an experiment to see if I can get Dlang to work with mbed for an embedded Cortex M Arm processor.
-
-  * https://github.com/ARMmbed/mbed-os-example-blinky
-
 I'm using a Windows 10 environment with Visual Studio 2017 / Visual Studio Code installed
 so all the docs reflect this.
 
