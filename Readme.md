@@ -4,9 +4,10 @@ This is an experiment to see if I can get Dlang to work with mbed for an embedde
 I'm using a Windows 10 environment with Visual Studio 2017 / Visual Studio Code installed
 so all the docs reflect this.
 
-The two area's I'm looking at include
+  * So far I've managed to single step / debug code on both the C side and D side at the same time via Visual Studio code
 
-  * Can I get single stepping / GDB debugging working within Visual Studio Code / D
+TODO
+
   * Easy way to access the mbed class api from within D
 
 
@@ -35,6 +36,16 @@ Next open a second command line window
 scripts\scripts\openocd_flash.bat
 ```
 
+Next start the openocd server
+```
+scripts\scripts\openocd_startserver.bat
+```
+
+Next open Visual Studio code, open this as a directory
+select the "Debug (OpenOCD USB) - Attach to GDB" profile
+add any breakpoints wanted.
+Then select start debugging from the menu
+
 
 ## Board
 
@@ -54,3 +65,4 @@ Although I've also been using a JLink Segger adapter as well.
   * https://stackoverflow.com/questions/20893471/calling-c-from-d
   * https://code.dlang.org/
   * http://derelictorg.github.io/
+  * https://github.com/JinShil/stm32f42_discovery_demo
