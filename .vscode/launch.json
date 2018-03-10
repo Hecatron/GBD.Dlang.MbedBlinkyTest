@@ -17,8 +17,8 @@
         {
             "name": "Debug (OpenOCD USB) - Cortex GDB",
             "type": "cortex-debug",
-            "request": "launch",
-            "device": "LPC1769",
+            "request": "attach",
+            "device": "LPC1768",
             "servertype": "openocd",
             "cwd": "${workspaceRoot}",
             "executable": "./BUILD/LPC1768/GCC_ARM/GBD.Dlang.MbedBlinkyTest.elf",

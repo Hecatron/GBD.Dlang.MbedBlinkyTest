@@ -6,6 +6,7 @@ One of the limitation when defining C++ class's within D
   * Can the generation of the class wrappers be automated?
   * I think D doesn't support Class constructors / they need to be re-implemented on the D side.
 
+TODO try setting up an example that doesn't use BetterC to check the linking
 
 ## Links
 

@@ -32,10 +32,10 @@ So far I've managed to get this to work okay with the below settings
 
 ### Setting up OpenOCD / USB
 
-I've tried to get this to work under Visual Studio Code / the GDB Plugin for Cortex-M
-But all I seem to be getting is **Failed to launch OpenOCD GDB server: Timeout**
-with the following configuration
+This now works, there's some entries I just needed to add to the openocd configuration
+so that openocd would halt the board on connetion from gdb
 
+  * https://mcuoneclipse.com/2016/04/09/solution-for-openocd-cannot-communicate-target-not-haltet/
   * https://github.com/Marus/cortex-debug/issues/27
 
 ```
@@ -43,31 +43,20 @@ with the following configuration
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Debug (OpenOCD USB)",
+            "name": "Debug (OpenOCD USB) - Cortex GDB",
             "type": "cortex-debug",
-            "request": "launch",
-            "device": "LPC1769",
+            "request": "attach",
+            "device": "LPC1768",
             "servertype": "openocd",
             "cwd": "${workspaceRoot}",
             "executable": "./BUILD/LPC1768/GCC_ARM/GBD.Dlang.MbedBlinkyTest.elf",
             "configFiles": [
-                "./scripts/openocd_configs/usb_boardconf.cfg"
+                "${workspaceRoot}/scripts/openocd_configs/usb_boardconf.cfg"
             ]
         },
     ]
 }
 ```
-
-That being said I have managed to get openocd working via the command line
-
-  * https://stackoverflow.com/questions/38033130/how-to-use-the-gdb-gnu-debugger-and-openocd-for-microcontroller-debugging-fr
-
-  * **scripts\openocd_flash.bat** - to flash the firmware to the board
-  * **scripts\openocd_startserver.bat** - to start the openocd server
-    (listens for telnet connections on port 4444, and gdb connections on 3333)
-  * **scripts\openocd_startgdb.bat** - this starts a ARM gdb session which connects to the openocd server
-
-So i suspect there may be a bug in relation to the GDB Arm Cortex plugin for Visual Studio code
 
 
 ## Non Cortex-M GDB
@@ -96,4 +85,13 @@ then this seems to work okay with OpenOCD, but we need to start openocd seperatl
         },
 ```
 
-TODO try the non cortex-M version of GDB with JLink
+## Command Line GDB
+
+I've also got GDB running from the command line
+
+  * https://stackoverflow.com/questions/38033130/how-to-use-the-gdb-gnu-debugger-and-openocd-for-microcontroller-debugging-fr
+
+  * **scripts\openocd_flash.bat** - to flash the firmware to the board
+  * **scripts\openocd_startserver.bat** - to start the openocd server
+    (listens for telnet connections on port 4444, and gdb connections on 3333)
+  * **scripts\openocd_startgdb.bat** - this starts a ARM gdb session which connects to the openocd server
