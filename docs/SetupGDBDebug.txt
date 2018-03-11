@@ -95,3 +95,16 @@ I've also got GDB running from the command line
   * **scripts\openocd_startserver.bat** - to start the openocd server
     (listens for telnet connections on port 4444, and gdb connections on 3333)
   * **scripts\openocd_startgdb.bat** - this starts a ARM gdb session which connects to the openocd server
+
+
+## SVD Files
+
+SVD Files are a way of describing the microcontroller hardware, to spy on registers etc
+There seems to be a good list here
+
+  * https://github.com/posborne/cmsis-svd
+
+It looks like the plugin is okay with STM CPU svd files
+but seems to struggle parsing the syntax of some of the more complicated LPC ones
+
+  * https://github.com/Marus/cortex-debug/issues/28

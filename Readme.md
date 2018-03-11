@@ -8,7 +8,7 @@ so all the docs reflect this.
 
 TODO
 
-  * Easy way to access the mbed class api from within D
+  * Easy way to access the mbed class api from within D?
 
 
 ## Basic run through

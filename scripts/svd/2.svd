@@ -1,0 +1,916 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?> 
+
+<device schemaVersion="1.1" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
+	<name>LPC176x5x</name>
+	<version>0.2</version>
+	<description>LPC176x/LPC175x M3</description>
+	<cpu>
+		<name>CM3</name>
+		<revision>r0p0</revision>
+		<endian>little</endian>
+		<mpuPresent>1</mpuPresent>
+		<fpuPresent>0</fpuPresent>
+		<nvicPrioBits>5</nvicPrioBits>
+		<vendorSystickConfig>0</vendorSystickConfig>
+	</cpu>
+	
+	<headerDefinitionsPrefix>LPC_</headerDefinitionsPrefix> 
+	<addressUnitBits>8</addressUnitBits>
+	<width>32</width>
+	<size>32</size>
+
+	<!--
+		Software that is described herein is for illustrative purposes only
+		which provides customers with programming information regarding the
+		products. This software is supplied "AS IS" without any warranties.
+		NXP Semiconductors assumes no responsibility or liability for the
+		use of the software, conveys no license or title under any patent,
+		copyright, or mask work right to the product. NXP Semiconductors
+		reserves the right to make changes in the software without
+		notification. NXP Semiconductors also make no representation or
+		warranty that such application will be suitable for the specified
+		use without further testing or modification.	
+		
+	-->	
+
+	<peripherals>
+<peripheral>
+	<name>GPIO</name>
+	<description>General Purpose I/O </description>
+	<groupName>GPIO</groupName>
+	<baseAddress>0x2009C000</baseAddress>
+	<addressBlock>
+	<offset>0x0</offset>
+	<size>0xFFF</size>
+	<usage>registers</usage>
+	</addressBlock>
+	<registers>
+		<register>
+			<dim>5</dim>
+			<dimIncrement>0x20</dimIncrement>
+			<dimIndex>0-4</dimIndex>
+			<name>DIR%s</name>
+			<description>GPIO Port Direction control register.</description>
+			<addressOffset>0x000</addressOffset>
+			<access>read-write</access>
+			<resetValue>0</resetValue>
+			<resetMask>0xFFFFFFFF</resetMask>
+			<fields>
+				<field>
+					<name>PINDIR0</name>
+					<description>Fast GPIO Direction PORTx control bits. Bit 0 in DIRx controls pin Px[0], bit 31 in DIRx controls pin Px[31]. 0 = Controlled pin is input. 1 = Controlled pin is output.</description>
+					<bitRange>[0:0]</bitRange>
+				</field>
+				<field>
+					<name>PINDIR1</name>
+					<description>Fast GPIO Direction PORTx control bits. Bit 0 in DIRx controls pin Px[0], bit 31 in DIRx controls pin Px[31]. 0 = Controlled pin is input. 1 = Controlled pin is output.</description>
+					<bitRange>[1:1]</bitRange>
+				</field>
+				<field>
+					<name>PINDIR2</name>
+					<description>Fast GPIO Direction PORTx control bits. Bit 0 in DIRx controls pin Px[0], bit 31 in DIRx controls pin Px[31]. 0 = Controlled pin is input. 1 = Controlled pin is output.</description>
+					<bitRange>[2:2]</bitRange>
+				</field>
+				<field>
+					<name>PINDIR3</name>
+					<description>Fast GPIO Direction PORTx control bits. Bit 0 in DIRx controls pin Px[0], bit 31 in DIRx controls pin Px[31]. 0 = Controlled pin is input. 1 = Controlled pin is output.</description>
+					<bitRange>[3:3]</bitRange>
+				</field>
+				<field>
+					<name>PINDIR4</name>
+					<description>Fast GPIO Direction PORTx control bits. Bit 0 in DIRx controls pin Px[0], bit 31 in DIRx controls pin Px[31]. 0 = Controlled pin is input. 1 = Controlled pin is output.</description>
+					<bitRange>[4:4]</bitRange>
+				</field>
+				<field>
+					<name>PINDIR5</name>
+					<description>Fast GPIO Direction PORTx control bits. Bit 0 in DIRx controls pin Px[0], bit 31 in DIRx controls pin Px[31]. 0 = Controlled pin is input. 1 = Controlled pin is output.</description>
+					<bitRange>[5:5]</bitRange>
+				</field>
+				<field>
+					<name>PINDIR6</name>
+					<description>Fast GPIO Direction PORTx control bits. Bit 0 in DIRx controls pin Px[0], bit 31 in DIRx controls pin Px[31]. 0 = Controlled pin is input. 1 = Controlled pin is output.</description>
+					<bitRange>[6:6]</bitRange>
+				</field>
+				<field>
+					<name>PINDIR7</name>
+					<description>Fast GPIO Direction PORTx control bits. Bit 0 in DIRx controls pin Px[0], bit 31 in DIRx controls pin Px[31]. 0 = Controlled pin is input. 1 = Controlled pin is output.</description>
+					<bitRange>[7:7]</bitRange>
+				</field>
+				<field>
+					<name>PINDIR8</name>
+					<description>Fast GPIO Direction PORTx control bits. Bit 0 in DIRx controls pin Px[0], bit 31 in DIRx controls pin Px[31]. 0 = Controlled pin is input. 1 = Controlled pin is output.</description>
+					<bitRange>[8:8]</bitRange>
+				</field>
+				<field>
+					<name>PINDIR9</name>
+					<description>Fast GPIO Direction PORTx control bits. Bit 0 in DIRx controls pin Px[0], bit 31 in DIRx controls pin Px[31]. 0 = Controlled pin is input. 1 = Controlled pin is output.</description>
+					<bitRange>[9:9]</bitRange>
+				</field>
+				<field>
+					<name>PINDIR10</name>
+					<description>Fast GPIO Direction PORTx control bits. Bit 0 in DIRx controls pin Px[0], bit 31 in DIRx controls pin Px[31]. 0 = Controlled pin is input. 1 = Controlled pin is output.</description>
+					<bitRange>[10:10]</bitRange>
+				</field>
+				<field>
+					<name>PINDIR11</name>
+					<description>Fast GPIO Direction PORTx control bits. Bit 0 in DIRx controls pin Px[0], bit 31 in DIRx controls pin Px[31]. 0 = Controlled pin is input. 1 = Controlled pin is output.</description>
+					<bitRange>[11:11]</bitRange>
+				</field>
+				<field>
+					<name>PINDIR12</name>
+					<description>Fast GPIO Direction PORTx control bits. Bit 0 in DIRx controls pin Px[0], bit 31 in DIRx controls pin Px[31]. 0 = Controlled pin is input. 1 = Controlled pin is output.</description>
+					<bitRange>[12:12]</bitRange>
+				</field>
+				<field>
+					<name>PINDIR13</name>
+					<description>Fast GPIO Direction PORTx control bits. Bit 0 in DIRx controls pin Px[0], bit 31 in DIRx controls pin Px[31]. 0 = Controlled pin is input. 1 = Controlled pin is output.</description>
+					<bitRange>[13:13]</bitRange>
+				</field>
+				<field>
+					<name>PINDIR14</name>
+					<description>Fast GPIO Direction PORTx control bits. Bit 0 in DIRx controls pin Px[0], bit 31 in DIRx controls pin Px[31]. 0 = Controlled pin is input. 1 = Controlled pin is output.</description>
+					<bitRange>[14:14]</bitRange>
+				</field>
+				<field>
+					<name>PINDIR15</name>
+					<description>Fast GPIO Direction PORTx control bits. Bit 0 in DIRx controls pin Px[0], bit 31 in DIRx controls pin Px[31]. 0 = Controlled pin is input. 1 = Controlled pin is output.</description>
+					<bitRange>[15:15]</bitRange>
+				</field>
+				<field>
+					<name>PINDIR16</name>
+					<description>Fast GPIO Direction PORTx control bits. Bit 0 in DIRx controls pin Px[0], bit 31 in DIRx controls pin Px[31]. 0 = Controlled pin is input. 1 = Controlled pin is output.</description>
+					<bitRange>[16:16]</bitRange>
+				</field>
+				<field>
+					<name>PINDIR17</name>
+					<description>Fast GPIO Direction PORTx control bits. Bit 0 in DIRx controls pin Px[0], bit 31 in DIRx controls pin Px[31]. 0 = Controlled pin is input. 1 = Controlled pin is output.</description>
+					<bitRange>[17:17]</bitRange>
+				</field>
+				<field>
+					<name>PINDIR18</name>
+					<description>Fast GPIO Direction PORTx control bits. Bit 0 in DIRx controls pin Px[0], bit 31 in DIRx controls pin Px[31]. 0 = Controlled pin is input. 1 = Controlled pin is output.</description>
+					<bitRange>[18:18]</bitRange>
+				</field>
+				<field>
+					<name>PINDIR19</name>
+					<description>Fast GPIO Direction PORTx control bits. Bit 0 in DIRx controls pin Px[0], bit 31 in DIRx controls pin Px[31]. 0 = Controlled pin is input. 1 = Controlled pin is output.</description>
+					<bitRange>[19:19]</bitRange>
+				</field>
+				<field>
+					<name>PINDIR20</name>
+					<description>Fast GPIO Direction PORTx control bits. Bit 0 in DIRx controls pin Px[0], bit 31 in DIRx controls pin Px[31]. 0 = Controlled pin is input. 1 = Controlled pin is output.</description>
+					<bitRange>[20:20]</bitRange>
+				</field>
+				<field>
+					<name>PINDIR21</name>
+					<description>Fast GPIO Direction PORTx control bits. Bit 0 in DIRx controls pin Px[0], bit 31 in DIRx controls pin Px[31]. 0 = Controlled pin is input. 1 = Controlled pin is output.</description>
+					<bitRange>[21:21]</bitRange>
+				</field>
+				<field>
+					<name>PINDIR22</name>
+					<description>Fast GPIO Direction PORTx control bits. Bit 0 in DIRx controls pin Px[0], bit 31 in DIRx controls pin Px[31]. 0 = Controlled pin is input. 1 = Controlled pin is output.</description>
+					<bitRange>[22:22]</bitRange>
+				</field>
+				<field>
+					<name>PINDIR23</name>
+					<description>Fast GPIO Direction PORTx control bits. Bit 0 in DIRx controls pin Px[0], bit 31 in DIRx controls pin Px[31]. 0 = Controlled pin is input. 1 = Controlled pin is output.</description>
+					<bitRange>[23:23]</bitRange>
+				</field>
+				<field>
+					<name>PINDIR24</name>
+					<description>Fast GPIO Direction PORTx control bits. Bit 0 in DIRx controls pin Px[0], bit 31 in DIRx controls pin Px[31]. 0 = Controlled pin is input. 1 = Controlled pin is output.</description>
+					<bitRange>[24:24]</bitRange>
+				</field>
+				<field>
+					<name>PINDIR25</name>
+					<description>Fast GPIO Direction PORTx control bits. Bit 0 in DIRx controls pin Px[0], bit 31 in DIRx controls pin Px[31]. 0 = Controlled pin is input. 1 = Controlled pin is output.</description>
+					<bitRange>[25:25]</bitRange>
+				</field>
+				<field>
+					<name>PINDIR26</name>
+					<description>Fast GPIO Direction PORTx control bits. Bit 0 in DIRx controls pin Px[0], bit 31 in DIRx controls pin Px[31]. 0 = Controlled pin is input. 1 = Controlled pin is output.</description>
+					<bitRange>[26:26]</bitRange>
+				</field>
+				<field>
+					<name>PINDIR27</name>
+					<description>Fast GPIO Direction PORTx control bits. Bit 0 in DIRx controls pin Px[0], bit 31 in DIRx controls pin Px[31]. 0 = Controlled pin is input. 1 = Controlled pin is output.</description>
+					<bitRange>[27:27]</bitRange>
+				</field>
+				<field>
+					<name>PINDIR28</name>
+					<description>Fast GPIO Direction PORTx control bits. Bit 0 in DIRx controls pin Px[0], bit 31 in DIRx controls pin Px[31]. 0 = Controlled pin is input. 1 = Controlled pin is output.</description>
+					<bitRange>[28:28]</bitRange>
+				</field>
+				<field>
+					<name>PINDIR29</name>
+					<description>Fast GPIO Direction PORTx control bits. Bit 0 in DIRx controls pin Px[0], bit 31 in DIRx controls pin Px[31]. 0 = Controlled pin is input. 1 = Controlled pin is output.</description>
+					<bitRange>[29:29]</bitRange>
+				</field>
+				<field>
+					<name>PINDIR30</name>
+					<description>Fast GPIO Direction PORTx control bits. Bit 0 in DIRx controls pin Px[0], bit 31 in DIRx controls pin Px[31]. 0 = Controlled pin is input. 1 = Controlled pin is output.</description>
+					<bitRange>[30:30]</bitRange>
+				</field>
+				<field>
+					<name>PINDIR31</name>
+					<description>Fast GPIO Direction PORTx control bits. Bit 0 in DIRx controls pin Px[0], bit 31 in DIRx controls pin Px[31]. 0 = Controlled pin is input. 1 = Controlled pin is output.</description>
+					<bitRange>[31:31]</bitRange>
+				</field>
+			</fields>
+		</register>
+		<register>
+			<dim>5</dim>
+			<dimIncrement>0x20</dimIncrement>
+			<dimIndex>0-4</dimIndex>
+			<name>MASK%s</name>
+			<description>Mask register for Port.</description>
+			<addressOffset>0x010</addressOffset>
+			<access>read-write</access>
+			<resetValue>0</resetValue>
+			<resetMask>0xFFFFFFFF</resetMask>
+			<fields>
+				<field>
+					<name>PINMASK0</name>
+					<description>Fast GPIO physical pin access control. 0 = Controlled pin is affected by writes to the port's SETx, CLRx, and PINx register(s). Current state of the pin can be read from the PINx register. 1 = Controlled pin is not affected by writes into the port's SETx, CLRx and PINx register(s). When the PINx register is read, this bit will not be updated with the state of the physical pin.</description>
+					<bitRange>[0:0]</bitRange>
+				</field>
+				<field>
+					<name>PINMASK1</name>
+					<description>Fast GPIO physical pin access control. 0 = Controlled pin is affected by writes to the port's SETx, CLRx, and PINx register(s). Current state of the pin can be read from the PINx register. 1 = Controlled pin is not affected by writes into the port's SETx, CLRx and PINx register(s). When the PINx register is read, this bit will not be updated with the state of the physical pin.</description>
+					<bitRange>[1:1]</bitRange>
+				</field>
+				<field>
+					<name>PINMASK2</name>
+					<description>Fast GPIO physical pin access control. 0 = Controlled pin is affected by writes to the port's SETx, CLRx, and PINx register(s). Current state of the pin can be read from the PINx register. 1 = Controlled pin is not affected by writes into the port's SETx, CLRx and PINx register(s). When the PINx register is read, this bit will not be updated with the state of the physical pin.</description>
+					<bitRange>[2:2]</bitRange>
+				</field>
+				<field>
+					<name>PINMASK3</name>
+					<description>Fast GPIO physical pin access control. 0 = Controlled pin is affected by writes to the port's SETx, CLRx, and PINx register(s). Current state of the pin can be read from the PINx register. 1 = Controlled pin is not affected by writes into the port's SETx, CLRx and PINx register(s). When the PINx register is read, this bit will not be updated with the state of the physical pin.</description>
+					<bitRange>[3:3]</bitRange>
+				</field>
+				<field>
+					<name>PINMASK4</name>
+					<description>Fast GPIO physical pin access control. 0 = Controlled pin is affected by writes to the port's SETx, CLRx, and PINx register(s). Current state of the pin can be read from the PINx register. 1 = Controlled pin is not affected by writes into the port's SETx, CLRx and PINx register(s). When the PINx register is read, this bit will not be updated with the state of the physical pin.</description>
+					<bitRange>[4:4]</bitRange>
+				</field>
+				<field>
+					<name>PINMASK5</name>
+					<description>Fast GPIO physical pin access control. 0 = Controlled pin is affected by writes to the port's SETx, CLRx, and PINx register(s). Current state of the pin can be read from the PINx register. 1 = Controlled pin is not affected by writes into the port's SETx, CLRx and PINx register(s). When the PINx register is read, this bit will not be updated with the state of the physical pin.</description>
+					<bitRange>[5:5]</bitRange>
+				</field>
+				<field>
+					<name>PINMASK6</name>
+					<description>Fast GPIO physical pin access control. 0 = Controlled pin is affected by writes to the port's SETx, CLRx, and PINx register(s). Current state of the pin can be read from the PINx register. 1 = Controlled pin is not affected by writes into the port's SETx, CLRx and PINx register(s). When the PINx register is read, this bit will not be updated with the state of the physical pin.</description>
+					<bitRange>[6:6]</bitRange>
+				</field>
+				<field>
+					<name>PINMASK7</name>
+					<description>Fast GPIO physical pin access control. 0 = Controlled pin is affected by writes to the port's SETx, CLRx, and PINx register(s). Current state of the pin can be read from the PINx register. 1 = Controlled pin is not affected by writes into the port's SETx, CLRx and PINx register(s). When the PINx register is read, this bit will not be updated with the state of the physical pin.</description>
+					<bitRange>[7:7]</bitRange>
+				</field>
+				<field>
+					<name>PINMASK8</name>
+					<description>Fast GPIO physical pin access control. 0 = Controlled pin is affected by writes to the port's SETx, CLRx, and PINx register(s). Current state of the pin can be read from the PINx register. 1 = Controlled pin is not affected by writes into the port's SETx, CLRx and PINx register(s). When the PINx register is read, this bit will not be updated with the state of the physical pin.</description>
+					<bitRange>[8:8]</bitRange>
+				</field>
+				<field>
+					<name>PINMASK9</name>
+					<description>Fast GPIO physical pin access control. 0 = Controlled pin is affected by writes to the port's SETx, CLRx, and PINx register(s). Current state of the pin can be read from the PINx register. 1 = Controlled pin is not affected by writes into the port's SETx, CLRx and PINx register(s). When the PINx register is read, this bit will not be updated with the state of the physical pin.</description>
+					<bitRange>[9:9]</bitRange>
+				</field>
+				<field>
+					<name>PINMASK10</name>
+					<description>Fast GPIO physical pin access control. 0 = Controlled pin is affected by writes to the port's SETx, CLRx, and PINx register(s). Current state of the pin can be read from the PINx register. 1 = Controlled pin is not affected by writes into the port's SETx, CLRx and PINx register(s). When the PINx register is read, this bit will not be updated with the state of the physical pin.</description>
+					<bitRange>[10:10]</bitRange>
+				</field>
+				<field>
+					<name>PINMASK11</name>
+					<description>Fast GPIO physical pin access control. 0 = Controlled pin is affected by writes to the port's SETx, CLRx, and PINx register(s). Current state of the pin can be read from the PINx register. 1 = Controlled pin is not affected by writes into the port's SETx, CLRx and PINx register(s). When the PINx register is read, this bit will not be updated with the state of the physical pin.</description>
+					<bitRange>[11:11]</bitRange>
+				</field>
+				<field>
+					<name>PINMASK12</name>
+					<description>Fast GPIO physical pin access control. 0 = Controlled pin is affected by writes to the port's SETx, CLRx, and PINx register(s). Current state of the pin can be read from the PINx register. 1 = Controlled pin is not affected by writes into the port's SETx, CLRx and PINx register(s). When the PINx register is read, this bit will not be updated with the state of the physical pin.</description>
+					<bitRange>[12:12]</bitRange>
+				</field>
+				<field>
+					<name>PINMASK13</name>
+					<description>Fast GPIO physical pin access control. 0 = Controlled pin is affected by writes to the port's SETx, CLRx, and PINx register(s). Current state of the pin can be read from the PINx register. 1 = Controlled pin is not affected by writes into the port's SETx, CLRx and PINx register(s). When the PINx register is read, this bit will not be updated with the state of the physical pin.</description>
+					<bitRange>[13:13]</bitRange>
+				</field>
+				<field>
+					<name>PINMASK14</name>
+					<description>Fast GPIO physical pin access control. 0 = Controlled pin is affected by writes to the port's SETx, CLRx, and PINx register(s). Current state of the pin can be read from the PINx register. 1 = Controlled pin is not affected by writes into the port's SETx, CLRx and PINx register(s). When the PINx register is read, this bit will not be updated with the state of the physical pin.</description>
+					<bitRange>[14:14]</bitRange>
+				</field>
+				<field>
+					<name>PINMASK15</name>
+					<description>Fast GPIO physical pin access control. 0 = Controlled pin is affected by writes to the port's SETx, CLRx, and PINx register(s). Current state of the pin can be read from the PINx register. 1 = Controlled pin is not affected by writes into the port's SETx, CLRx and PINx register(s). When the PINx register is read, this bit will not be updated with the state of the physical pin.</description>
+					<bitRange>[15:15]</bitRange>
+				</field>
+				<field>
+					<name>PINMASK16</name>
+					<description>Fast GPIO physical pin access control. 0 = Controlled pin is affected by writes to the port's SETx, CLRx, and PINx register(s). Current state of the pin can be read from the PINx register. 1 = Controlled pin is not affected by writes into the port's SETx, CLRx and PINx register(s). When the PINx register is read, this bit will not be updated with the state of the physical pin.</description>
+					<bitRange>[16:16]</bitRange>
+				</field>
+				<field>
+					<name>PINMASK17</name>
+					<description>Fast GPIO physical pin access control. 0 = Controlled pin is affected by writes to the port's SETx, CLRx, and PINx register(s). Current state of the pin can be read from the PINx register. 1 = Controlled pin is not affected by writes into the port's SETx, CLRx and PINx register(s). When the PINx register is read, this bit will not be updated with the state of the physical pin.</description>
+					<bitRange>[17:17]</bitRange>
+				</field>
+				<field>
+					<name>PINMASK18</name>
+					<description>Fast GPIO physical pin access control. 0 = Controlled pin is affected by writes to the port's SETx, CLRx, and PINx register(s). Current state of the pin can be read from the PINx register. 1 = Controlled pin is not affected by writes into the port's SETx, CLRx and PINx register(s). When the PINx register is read, this bit will not be updated with the state of the physical pin.</description>
+					<bitRange>[18:18]</bitRange>
+				</field>
+				<field>
+					<name>PINMASK19</name>
+					<description>Fast GPIO physical pin access control. 0 = Controlled pin is affected by writes to the port's SETx, CLRx, and PINx register(s). Current state of the pin can be read from the PINx register. 1 = Controlled pin is not affected by writes into the port's SETx, CLRx and PINx register(s). When the PINx register is read, this bit will not be updated with the state of the physical pin.</description>
+					<bitRange>[19:19]</bitRange>
+				</field>
+				<field>
+					<name>PINMASK20</name>
+					<description>Fast GPIO physical pin access control. 0 = Controlled pin is affected by writes to the port's SETx, CLRx, and PINx register(s). Current state of the pin can be read from the PINx register. 1 = Controlled pin is not affected by writes into the port's SETx, CLRx and PINx register(s). When the PINx register is read, this bit will not be updated with the state of the physical pin.</description>
+					<bitRange>[20:20]</bitRange>
+				</field>
+				<field>
+					<name>PINMASK21</name>
+					<description>Fast GPIO physical pin access control. 0 = Controlled pin is affected by writes to the port's SETx, CLRx, and PINx register(s). Current state of the pin can be read from the PINx register. 1 = Controlled pin is not affected by writes into the port's SETx, CLRx and PINx register(s). When the PINx register is read, this bit will not be updated with the state of the physical pin.</description>
+					<bitRange>[21:21]</bitRange>
+				</field>
+				<field>
+					<name>PINMASK22</name>
+					<description>Fast GPIO physical pin access control. 0 = Controlled pin is affected by writes to the port's SETx, CLRx, and PINx register(s). Current state of the pin can be read from the PINx register. 1 = Controlled pin is not affected by writes into the port's SETx, CLRx and PINx register(s). When the PINx register is read, this bit will not be updated with the state of the physical pin.</description>
+					<bitRange>[22:22]</bitRange>
+				</field>
+				<field>
+					<name>PINMASK23</name>
+					<description>Fast GPIO physical pin access control. 0 = Controlled pin is affected by writes to the port's SETx, CLRx, and PINx register(s). Current state of the pin can be read from the PINx register. 1 = Controlled pin is not affected by writes into the port's SETx, CLRx and PINx register(s). When the PINx register is read, this bit will not be updated with the state of the physical pin.</description>
+					<bitRange>[23:23]</bitRange>
+				</field>
+				<field>
+					<name>PINMASK24</name>
+					<description>Fast GPIO physical pin access control. 0 = Controlled pin is affected by writes to the port's SETx, CLRx, and PINx register(s). Current state of the pin can be read from the PINx register. 1 = Controlled pin is not affected by writes into the port's SETx, CLRx and PINx register(s). When the PINx register is read, this bit will not be updated with the state of the physical pin.</description>
+					<bitRange>[24:24]</bitRange>
+				</field>
+				<field>
+					<name>PINMASK25</name>
+					<description>Fast GPIO physical pin access control. 0 = Controlled pin is affected by writes to the port's SETx, CLRx, and PINx register(s). Current state of the pin can be read from the PINx register. 1 = Controlled pin is not affected by writes into the port's SETx, CLRx and PINx register(s). When the PINx register is read, this bit will not be updated with the state of the physical pin.</description>
+					<bitRange>[25:25]</bitRange>
+				</field>
+				<field>
+					<name>PINMASK26</name>
+					<description>Fast GPIO physical pin access control. 0 = Controlled pin is affected by writes to the port's SETx, CLRx, and PINx register(s). Current state of the pin can be read from the PINx register. 1 = Controlled pin is not affected by writes into the port's SETx, CLRx and PINx register(s). When the PINx register is read, this bit will not be updated with the state of the physical pin.</description>
+					<bitRange>[26:26]</bitRange>
+				</field>
+				<field>
+					<name>PINMASK27</name>
+					<description>Fast GPIO physical pin access control. 0 = Controlled pin is affected by writes to the port's SETx, CLRx, and PINx register(s). Current state of the pin can be read from the PINx register. 1 = Controlled pin is not affected by writes into the port's SETx, CLRx and PINx register(s). When the PINx register is read, this bit will not be updated with the state of the physical pin.</description>
+					<bitRange>[27:27]</bitRange>
+				</field>
+				<field>
+					<name>PINMASK28</name>
+					<description>Fast GPIO physical pin access control. 0 = Controlled pin is affected by writes to the port's SETx, CLRx, and PINx register(s). Current state of the pin can be read from the PINx register. 1 = Controlled pin is not affected by writes into the port's SETx, CLRx and PINx register(s). When the PINx register is read, this bit will not be updated with the state of the physical pin.</description>
+					<bitRange>[28:28]</bitRange>
+				</field>
+				<field>
+					<name>PINMASK29</name>
+					<description>Fast GPIO physical pin access control. 0 = Controlled pin is affected by writes to the port's SETx, CLRx, and PINx register(s). Current state of the pin can be read from the PINx register. 1 = Controlled pin is not affected by writes into the port's SETx, CLRx and PINx register(s). When the PINx register is read, this bit will not be updated with the state of the physical pin.</description>
+					<bitRange>[29:29]</bitRange>
+				</field>
+				<field>
+					<name>PINMASK30</name>
+					<description>Fast GPIO physical pin access control. 0 = Controlled pin is affected by writes to the port's SETx, CLRx, and PINx register(s). Current state of the pin can be read from the PINx register. 1 = Controlled pin is not affected by writes into the port's SETx, CLRx and PINx register(s). When the PINx register is read, this bit will not be updated with the state of the physical pin.</description>
+					<bitRange>[30:30]</bitRange>
+				</field>
+				<field>
+					<name>PINMASK31</name>
+					<description>Fast GPIO physical pin access control. 0 = Controlled pin is affected by writes to the port's SETx, CLRx, and PINx register(s). Current state of the pin can be read from the PINx register. 1 = Controlled pin is not affected by writes into the port's SETx, CLRx and PINx register(s). When the PINx register is read, this bit will not be updated with the state of the physical pin.</description>
+					<bitRange>[31:31]</bitRange>
+				</field>
+			</fields>
+		</register>
+		<register>
+			<dim>5</dim>
+			<dimIncrement>0x20</dimIncrement>
+			<dimIndex>0-4</dimIndex>
+			<name>PIN%s</name>
+			<description>Port Pin value register using FIOMASK.</description>
+			<addressOffset>0x014</addressOffset>
+			<access>read-write</access>
+			<resetValue>0</resetValue>
+			<resetMask>0xFFFFFFFF</resetMask>
+			<fields>
+				<field>
+					<name>PINVAL0</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in PINx corresponds to pin Px[0], bit 31 in PINx corresponds to pin Px[31]. 0 = Controlled pin output is set to LOW. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[0:0]</bitRange>
+				</field>
+				<field>
+					<name>PINVAL1</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in PINx corresponds to pin Px[0], bit 31 in PINx corresponds to pin Px[31]. 0 = Controlled pin output is set to LOW. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[1:1]</bitRange>
+				</field>
+				<field>
+					<name>PINVAL2</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in PINx corresponds to pin Px[0], bit 31 in PINx corresponds to pin Px[31]. 0 = Controlled pin output is set to LOW. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[2:2]</bitRange>
+				</field>
+				<field>
+					<name>PINVAL3</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in PINx corresponds to pin Px[0], bit 31 in PINx corresponds to pin Px[31]. 0 = Controlled pin output is set to LOW. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[3:3]</bitRange>
+				</field>
+				<field>
+					<name>PINVAL4</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in PINx corresponds to pin Px[0], bit 31 in PINx corresponds to pin Px[31]. 0 = Controlled pin output is set to LOW. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[4:4]</bitRange>
+				</field>
+				<field>
+					<name>PINVAL5</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in PINx corresponds to pin Px[0], bit 31 in PINx corresponds to pin Px[31]. 0 = Controlled pin output is set to LOW. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[5:5]</bitRange>
+				</field>
+				<field>
+					<name>PINVAL6</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in PINx corresponds to pin Px[0], bit 31 in PINx corresponds to pin Px[31]. 0 = Controlled pin output is set to LOW. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[6:6]</bitRange>
+				</field>
+				<field>
+					<name>PINVAL7</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in PINx corresponds to pin Px[0], bit 31 in PINx corresponds to pin Px[31]. 0 = Controlled pin output is set to LOW. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[7:7]</bitRange>
+				</field>
+				<field>
+					<name>PINVAL8</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in PINx corresponds to pin Px[0], bit 31 in PINx corresponds to pin Px[31]. 0 = Controlled pin output is set to LOW. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[8:8]</bitRange>
+				</field>
+				<field>
+					<name>PINVAL9</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in PINx corresponds to pin Px[0], bit 31 in PINx corresponds to pin Px[31]. 0 = Controlled pin output is set to LOW. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[9:9]</bitRange>
+				</field>
+				<field>
+					<name>PINVAL10</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in PINx corresponds to pin Px[0], bit 31 in PINx corresponds to pin Px[31]. 0 = Controlled pin output is set to LOW. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[10:10]</bitRange>
+				</field>
+				<field>
+					<name>PINVAL11</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in PINx corresponds to pin Px[0], bit 31 in PINx corresponds to pin Px[31]. 0 = Controlled pin output is set to LOW. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[11:11]</bitRange>
+				</field>
+				<field>
+					<name>PINVAL12</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in PINx corresponds to pin Px[0], bit 31 in PINx corresponds to pin Px[31]. 0 = Controlled pin output is set to LOW. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[12:12]</bitRange>
+				</field>
+				<field>
+					<name>PINVAL13</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in PINx corresponds to pin Px[0], bit 31 in PINx corresponds to pin Px[31]. 0 = Controlled pin output is set to LOW. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[13:13]</bitRange>
+				</field>
+				<field>
+					<name>PINVAL14</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in PINx corresponds to pin Px[0], bit 31 in PINx corresponds to pin Px[31]. 0 = Controlled pin output is set to LOW. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[14:14]</bitRange>
+				</field>
+				<field>
+					<name>PINVAL15</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in PINx corresponds to pin Px[0], bit 31 in PINx corresponds to pin Px[31]. 0 = Controlled pin output is set to LOW. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[15:15]</bitRange>
+				</field>
+				<field>
+					<name>PINVAL16</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in PINx corresponds to pin Px[0], bit 31 in PINx corresponds to pin Px[31]. 0 = Controlled pin output is set to LOW. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[16:16]</bitRange>
+				</field>
+				<field>
+					<name>PINVAL17</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in PINx corresponds to pin Px[0], bit 31 in PINx corresponds to pin Px[31]. 0 = Controlled pin output is set to LOW. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[17:17]</bitRange>
+				</field>
+				<field>
+					<name>PINVAL18</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in PINx corresponds to pin Px[0], bit 31 in PINx corresponds to pin Px[31]. 0 = Controlled pin output is set to LOW. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[18:18]</bitRange>
+				</field>
+				<field>
+					<name>PINVAL19</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in PINx corresponds to pin Px[0], bit 31 in PINx corresponds to pin Px[31]. 0 = Controlled pin output is set to LOW. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[19:19]</bitRange>
+				</field>
+				<field>
+					<name>PINVAL20</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in PINx corresponds to pin Px[0], bit 31 in PINx corresponds to pin Px[31]. 0 = Controlled pin output is set to LOW. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[20:20]</bitRange>
+				</field>
+				<field>
+					<name>PINVAL21</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in PINx corresponds to pin Px[0], bit 31 in PINx corresponds to pin Px[31]. 0 = Controlled pin output is set to LOW. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[21:21]</bitRange>
+				</field>
+				<field>
+					<name>PINVAL22</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in PINx corresponds to pin Px[0], bit 31 in PINx corresponds to pin Px[31]. 0 = Controlled pin output is set to LOW. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[22:22]</bitRange>
+				</field>
+				<field>
+					<name>PINVAL23</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in PINx corresponds to pin Px[0], bit 31 in PINx corresponds to pin Px[31]. 0 = Controlled pin output is set to LOW. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[23:23]</bitRange>
+				</field>
+				<field>
+					<name>PINVAL24</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in PINx corresponds to pin Px[0], bit 31 in PINx corresponds to pin Px[31]. 0 = Controlled pin output is set to LOW. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[24:24]</bitRange>
+				</field>
+				<field>
+					<name>PINVAL25</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in PINx corresponds to pin Px[0], bit 31 in PINx corresponds to pin Px[31]. 0 = Controlled pin output is set to LOW. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[25:25]</bitRange>
+				</field>
+				<field>
+					<name>PINVAL26</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in PINx corresponds to pin Px[0], bit 31 in PINx corresponds to pin Px[31]. 0 = Controlled pin output is set to LOW. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[26:26]</bitRange>
+				</field>
+				<field>
+					<name>PINVAL27</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in PINx corresponds to pin Px[0], bit 31 in PINx corresponds to pin Px[31]. 0 = Controlled pin output is set to LOW. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[27:27]</bitRange>
+				</field>
+				<field>
+					<name>PINVAL28</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in PINx corresponds to pin Px[0], bit 31 in PINx corresponds to pin Px[31]. 0 = Controlled pin output is set to LOW. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[28:28]</bitRange>
+				</field>
+				<field>
+					<name>PINVAL29</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in PINx corresponds to pin Px[0], bit 31 in PINx corresponds to pin Px[31]. 0 = Controlled pin output is set to LOW. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[29:29]</bitRange>
+				</field>
+				<field>
+					<name>PINVAL30</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in PINx corresponds to pin Px[0], bit 31 in PINx corresponds to pin Px[31]. 0 = Controlled pin output is set to LOW. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[30:30]</bitRange>
+				</field>
+				<field>
+					<name>PINVAL31</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in PINx corresponds to pin Px[0], bit 31 in PINx corresponds to pin Px[31]. 0 = Controlled pin output is set to LOW. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[31:31]</bitRange>
+				</field>
+			</fields>
+		</register>
+		<register>
+			<dim>5</dim>
+			<dimIncrement>0x20</dimIncrement>
+			<dimIndex>0-4</dimIndex>
+			<name>SET%s</name>
+			<description>Port Output Set register using FIOMASK.</description>
+			<addressOffset>0x018</addressOffset>
+			<access>read-write</access>
+			<resetValue>0</resetValue>
+			<resetMask>0xFFFFFFFF</resetMask>
+			<fields>
+				<field>
+					<name>PINSET0</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in SETx controls pin Px[0], bit 31 in SETx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[0:0]</bitRange>
+				</field>
+				<field>
+					<name>PINSET1</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in SETx controls pin Px[0], bit 31 in SETx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[1:1]</bitRange>
+				</field>
+				<field>
+					<name>PINSET2</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in SETx controls pin Px[0], bit 31 in SETx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[2:2]</bitRange>
+				</field>
+				<field>
+					<name>PINSET3</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in SETx controls pin Px[0], bit 31 in SETx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[3:3]</bitRange>
+				</field>
+				<field>
+					<name>PINSET4</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in SETx controls pin Px[0], bit 31 in SETx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[4:4]</bitRange>
+				</field>
+				<field>
+					<name>PINSET5</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in SETx controls pin Px[0], bit 31 in SETx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[5:5]</bitRange>
+				</field>
+				<field>
+					<name>PINSET6</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in SETx controls pin Px[0], bit 31 in SETx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[6:6]</bitRange>
+				</field>
+				<field>
+					<name>PINSET7</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in SETx controls pin Px[0], bit 31 in SETx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[7:7]</bitRange>
+				</field>
+				<field>
+					<name>PINSET8</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in SETx controls pin Px[0], bit 31 in SETx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[8:8]</bitRange>
+				</field>
+				<field>
+					<name>PINSET9</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in SETx controls pin Px[0], bit 31 in SETx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[9:9]</bitRange>
+				</field>
+				<field>
+					<name>PINSET10</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in SETx controls pin Px[0], bit 31 in SETx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[10:10]</bitRange>
+				</field>
+				<field>
+					<name>PINSET11</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in SETx controls pin Px[0], bit 31 in SETx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[11:11]</bitRange>
+				</field>
+				<field>
+					<name>PINSET12</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in SETx controls pin Px[0], bit 31 in SETx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[12:12]</bitRange>
+				</field>
+				<field>
+					<name>PINSET13</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in SETx controls pin Px[0], bit 31 in SETx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[13:13]</bitRange>
+				</field>
+				<field>
+					<name>PINSET14</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in SETx controls pin Px[0], bit 31 in SETx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[14:14]</bitRange>
+				</field>
+				<field>
+					<name>PINSET15</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in SETx controls pin Px[0], bit 31 in SETx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[15:15]</bitRange>
+				</field>
+				<field>
+					<name>PINSET16</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in SETx controls pin Px[0], bit 31 in SETx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[16:16]</bitRange>
+				</field>
+				<field>
+					<name>PINSET17</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in SETx controls pin Px[0], bit 31 in SETx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[17:17]</bitRange>
+				</field>
+				<field>
+					<name>PINSET18</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in SETx controls pin Px[0], bit 31 in SETx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[18:18]</bitRange>
+				</field>
+				<field>
+					<name>PINSET19</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in SETx controls pin Px[0], bit 31 in SETx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[19:19]</bitRange>
+				</field>
+				<field>
+					<name>PINSET20</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in SETx controls pin Px[0], bit 31 in SETx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[20:20]</bitRange>
+				</field>
+				<field>
+					<name>PINSET21</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in SETx controls pin Px[0], bit 31 in SETx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[21:21]</bitRange>
+				</field>
+				<field>
+					<name>PINSET22</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in SETx controls pin Px[0], bit 31 in SETx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[22:22]</bitRange>
+				</field>
+				<field>
+					<name>PINSET23</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in SETx controls pin Px[0], bit 31 in SETx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[23:23]</bitRange>
+				</field>
+				<field>
+					<name>PINSET24</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in SETx controls pin Px[0], bit 31 in SETx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[24:24]</bitRange>
+				</field>
+				<field>
+					<name>PINSET25</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in SETx controls pin Px[0], bit 31 in SETx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[25:25]</bitRange>
+				</field>
+				<field>
+					<name>PINSET26</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in SETx controls pin Px[0], bit 31 in SETx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[26:26]</bitRange>
+				</field>
+				<field>
+					<name>PINSET27</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in SETx controls pin Px[0], bit 31 in SETx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[27:27]</bitRange>
+				</field>
+				<field>
+					<name>PINSET28</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in SETx controls pin Px[0], bit 31 in SETx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[28:28]</bitRange>
+				</field>
+				<field>
+					<name>PINSET29</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in SETx controls pin Px[0], bit 31 in SETx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[29:29]</bitRange>
+				</field>
+				<field>
+					<name>PINSET30</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in SETx controls pin Px[0], bit 31 in SETx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[30:30]</bitRange>
+				</field>
+				<field>
+					<name>PINSET31</name>
+					<description>Fast GPIO output value Set bits. Bit 0 in SETx controls pin Px[0], bit 31 in SETx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to HIGH.</description>
+					<bitRange>[31:31]</bitRange>
+				</field>
+			</fields>
+		</register>
+		<register>
+			<dim>5</dim>
+			<dimIncrement>0x20</dimIncrement>
+			<dimIndex>0-4</dimIndex>
+			<name>CLR%s</name>
+			<description>Port Output Clear register using FIOMASK.</description>
+			<addressOffset>0x01C</addressOffset>
+			<access>write-only</access>
+			<resetValue>0</resetValue>
+			<resetMask>0xFFFFFFFF</resetMask>
+			<fields>
+				<field>
+					<name>PINCLR0</name>
+					<description>Fast GPIO output value Clear bits. Bit 0 in CLRx controls pin Px[0], bit 31 in CLRx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to LOW.</description>
+					<bitRange>[0:0]</bitRange>
+				</field>
+				<field>
+					<name>PINCLR1</name>
+					<description>Fast GPIO output value Clear bits. Bit 0 in CLRx controls pin Px[0], bit 31 in CLRx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to LOW.</description>
+					<bitRange>[1:1]</bitRange>
+				</field>
+				<field>
+					<name>PINCLR2</name>
+					<description>Fast GPIO output value Clear bits. Bit 0 in CLRx controls pin Px[0], bit 31 in CLRx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to LOW.</description>
+					<bitRange>[2:2]</bitRange>
+				</field>
+				<field>
+					<name>PINCLR3</name>
+					<description>Fast GPIO output value Clear bits. Bit 0 in CLRx controls pin Px[0], bit 31 in CLRx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to LOW.</description>
+					<bitRange>[3:3]</bitRange>
+				</field>
+				<field>
+					<name>PINCLR4</name>
+					<description>Fast GPIO output value Clear bits. Bit 0 in CLRx controls pin Px[0], bit 31 in CLRx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to LOW.</description>
+					<bitRange>[4:4]</bitRange>
+				</field>
+				<field>
+					<name>PINCLR5</name>
+					<description>Fast GPIO output value Clear bits. Bit 0 in CLRx controls pin Px[0], bit 31 in CLRx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to LOW.</description>
+					<bitRange>[5:5]</bitRange>
+				</field>
+				<field>
+					<name>PINCLR6</name>
+					<description>Fast GPIO output value Clear bits. Bit 0 in CLRx controls pin Px[0], bit 31 in CLRx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to LOW.</description>
+					<bitRange>[6:6]</bitRange>
+				</field>
+				<field>
+					<name>PINCLR7</name>
+					<description>Fast GPIO output value Clear bits. Bit 0 in CLRx controls pin Px[0], bit 31 in CLRx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to LOW.</description>
+					<bitRange>[7:7]</bitRange>
+				</field>
+				<field>
+					<name>PINCLR8</name>
+					<description>Fast GPIO output value Clear bits. Bit 0 in CLRx controls pin Px[0], bit 31 in CLRx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to LOW.</description>
+					<bitRange>[8:8]</bitRange>
+				</field>
+				<field>
+					<name>PINCLR9</name>
+					<description>Fast GPIO output value Clear bits. Bit 0 in CLRx controls pin Px[0], bit 31 in CLRx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to LOW.</description>
+					<bitRange>[9:9]</bitRange>
+				</field>
+				<field>
+					<name>PINCLR10</name>
+					<description>Fast GPIO output value Clear bits. Bit 0 in CLRx controls pin Px[0], bit 31 in CLRx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to LOW.</description>
+					<bitRange>[10:10]</bitRange>
+				</field>
+				<field>
+					<name>PINCLR11</name>
+					<description>Fast GPIO output value Clear bits. Bit 0 in CLRx controls pin Px[0], bit 31 in CLRx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to LOW.</description>
+					<bitRange>[11:11]</bitRange>
+				</field>
+				<field>
+					<name>PINCLR12</name>
+					<description>Fast GPIO output value Clear bits. Bit 0 in CLRx controls pin Px[0], bit 31 in CLRx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to LOW.</description>
+					<bitRange>[12:12]</bitRange>
+				</field>
+				<field>
+					<name>PINCLR13</name>
+					<description>Fast GPIO output value Clear bits. Bit 0 in CLRx controls pin Px[0], bit 31 in CLRx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to LOW.</description>
+					<bitRange>[13:13]</bitRange>
+				</field>
+				<field>
+					<name>PINCLR14</name>
+					<description>Fast GPIO output value Clear bits. Bit 0 in CLRx controls pin Px[0], bit 31 in CLRx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to LOW.</description>
+					<bitRange>[14:14]</bitRange>
+				</field>
+				<field>
+					<name>PINCLR15</name>
+					<description>Fast GPIO output value Clear bits. Bit 0 in CLRx controls pin Px[0], bit 31 in CLRx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to LOW.</description>
+					<bitRange>[15:15]</bitRange>
+				</field>
+				<field>
+					<name>PINCLR16</name>
+					<description>Fast GPIO output value Clear bits. Bit 0 in CLRx controls pin Px[0], bit 31 in CLRx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to LOW.</description>
+					<bitRange>[16:16]</bitRange>
+				</field>
+				<field>
+					<name>PINCLR17</name>
+					<description>Fast GPIO output value Clear bits. Bit 0 in CLRx controls pin Px[0], bit 31 in CLRx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to LOW.</description>
+					<bitRange>[17:17]</bitRange>
+				</field>
+				<field>
+					<name>PINCLR18</name>
+					<description>Fast GPIO output value Clear bits. Bit 0 in CLRx controls pin Px[0], bit 31 in CLRx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to LOW.</description>
+					<bitRange>[18:18]</bitRange>
+				</field>
+				<field>
+					<name>PINCLR19</name>
+					<description>Fast GPIO output value Clear bits. Bit 0 in CLRx controls pin Px[0], bit 31 in CLRx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to LOW.</description>
+					<bitRange>[19:19]</bitRange>
+				</field>
+				<field>
+					<name>PINCLR20</name>
+					<description>Fast GPIO output value Clear bits. Bit 0 in CLRx controls pin Px[0], bit 31 in CLRx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to LOW.</description>
+					<bitRange>[20:20]</bitRange>
+				</field>
+				<field>
+					<name>PINCLR21</name>
+					<description>Fast GPIO output value Clear bits. Bit 0 in CLRx controls pin Px[0], bit 31 in CLRx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to LOW.</description>
+					<bitRange>[21:21]</bitRange>
+				</field>
+				<field>
+					<name>PINCLR22</name>
+					<description>Fast GPIO output value Clear bits. Bit 0 in CLRx controls pin Px[0], bit 31 in CLRx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to LOW.</description>
+					<bitRange>[22:22]</bitRange>
+				</field>
+				<field>
+					<name>PINCLR23</name>
+					<description>Fast GPIO output value Clear bits. Bit 0 in CLRx controls pin Px[0], bit 31 in CLRx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to LOW.</description>
+					<bitRange>[23:23]</bitRange>
+				</field>
+				<field>
+					<name>PINCLR24</name>
+					<description>Fast GPIO output value Clear bits. Bit 0 in CLRx controls pin Px[0], bit 31 in CLRx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to LOW.</description>
+					<bitRange>[24:24]</bitRange>
+				</field>
+				<field>
+					<name>PINCLR25</name>
+					<description>Fast GPIO output value Clear bits. Bit 0 in CLRx controls pin Px[0], bit 31 in CLRx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to LOW.</description>
+					<bitRange>[25:25]</bitRange>
+				</field>
+				<field>
+					<name>PINCLR26</name>
+					<description>Fast GPIO output value Clear bits. Bit 0 in CLRx controls pin Px[0], bit 31 in CLRx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to LOW.</description>
+					<bitRange>[26:26]</bitRange>
+				</field>
+				<field>
+					<name>PINCLR27</name>
+					<description>Fast GPIO output value Clear bits. Bit 0 in CLRx controls pin Px[0], bit 31 in CLRx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to LOW.</description>
+					<bitRange>[27:27]</bitRange>
+				</field>
+				<field>
+					<name>PINCLR28</name>
+					<description>Fast GPIO output value Clear bits. Bit 0 in CLRx controls pin Px[0], bit 31 in CLRx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to LOW.</description>
+					<bitRange>[28:28]</bitRange>
+				</field>
+				<field>
+					<name>PINCLR29</name>
+					<description>Fast GPIO output value Clear bits. Bit 0 in CLRx controls pin Px[0], bit 31 in CLRx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to LOW.</description>
+					<bitRange>[29:29]</bitRange>
+				</field>
+				<field>
+					<name>PINCLR30</name>
+					<description>Fast GPIO output value Clear bits. Bit 0 in CLRx controls pin Px[0], bit 31 in CLRx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to LOW.</description>
+					<bitRange>[30:30]</bitRange>
+				</field>
+				<field>
+					<name>PINCLR31</name>
+					<description>Fast GPIO output value Clear bits. Bit 0 in CLRx controls pin Px[0], bit 31 in CLRx controls pin Px[31]. 0 = Controlled pin output is unchanged. 1 = Controlled pin output is set to LOW.</description>
+					<bitRange>[31:31]</bitRange>
+				</field>
+			</fields>
+		</register>
+		</registers>
+		</peripheral>
+	</peripherals>
+</device>

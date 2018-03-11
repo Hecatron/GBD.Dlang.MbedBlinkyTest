@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?> 
+
+<device schemaVersion="1.1" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
+	<name>LPC176x5x</name>
+	<version>0.2</version>
+	<description>LPC176x/LPC175x M3</description>
+	<cpu>
+		<name>CM3</name>
+		<revision>r0p0</revision>
+		<endian>little</endian>
+		<mpuPresent>1</mpuPresent>
+		<fpuPresent>0</fpuPresent>
+		<nvicPrioBits>5</nvicPrioBits>
+		<vendorSystickConfig>0</vendorSystickConfig>
+	</cpu>
+	
+	<headerDefinitionsPrefix>LPC_</headerDefinitionsPrefix> 
+	<addressUnitBits>8</addressUnitBits>
+	<width>32</width>
+	<size>32</size>
+
+	<!--
+		Software that is described herein is for illustrative purposes only
+		which provides customers with programming information regarding the
+		products. This software is supplied "AS IS" without any warranties.
+		NXP Semiconductors assumes no responsibility or liability for the
+		use of the software, conveys no license or title under any patent,
+		copyright, or mask work right to the product. NXP Semiconductors
+		reserves the right to make changes in the software without
+		notification. NXP Semiconductors also make no representation or
+		warranty that such application will be suitable for the specified
+		use without further testing or modification.	
+		
+	-->	
+
+	<peripherals>
+		<peripheral>
+			<name>WDT</name>
+			<description>Watchdog Timer (WDT) </description>
+			<groupName>WDT</groupName>
+			<baseAddress>0x40000000</baseAddress>
+			<addressBlock>
+				<offset>0x0</offset>
+				<size>0xFFF</size>
+				<usage>registers</usage>
+			</addressBlock>
+			<interrupt>
+				<name>WDT</name>
+				<value>0</value>
+			</interrupt>
+			<registers>
+				<register>
+					<name>MOD</name>
+					<description>Watchdog mode register. This register determines the basic mode and status of the Watchdog Timer.</description>
+					<addressOffset>0x000</addressOffset>
+					<access>read-write</access>
+					<resetValue>0</resetValue>
+					<resetMask>0xFFFFFFFF</resetMask>
+					<fields>
+						<field>
+							<name>WDEN</name>
+							<description>Watchdog enable bit. This bit is Set Only.</description>
+							<bitRange>[0:0]</bitRange>
+							<enumeratedValues>
+								<name>ENUM</name>
+								<enumeratedValue>
+									<name>STOP</name>
+									<description>The watchdog timer is stopped.</description>
+									<value>0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>RUN</name>
+									<description>The watchdog timer is running.</description>
+									<value>1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>WDRESET</name>
+							<description>Watchdog reset enable bit. This bit is Set Only. See Table 652.</description>
+							<bitRange>[1:1]</bitRange>
+							<enumeratedValues>
+								<name>ENUM</name>
+								<enumeratedValue>
+									<name>NORESET</name>
+									<description>A watchdog timeout will not cause a chip reset.</description>
+									<value>0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>RESET</name>
+									<description>A watchdog timeout will cause a chip reset.</description>
+									<value>1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>WDTOF</name>
+							<description>Watchdog time-out flag. Set when the watchdog timer times out, cleared by software.</description>
+							<bitRange>[2:2]</bitRange>
+						</field>
+						<field>
+							<name>WDINT</name>
+							<description>Watchdog interrupt flag.  Cleared by software.</description>
+							<bitRange>[3:3]</bitRange>
+						</field>
+						<field>
+							<name>RESERVED</name>
+							<description>Reserved. Read value is undefined, only zero should be written.</description>
+							<bitRange>[31:4]</bitRange>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>TC</name>
+					<description>Watchdog timer constant register. The value in this register determines the time-out value.</description>
+					<addressOffset>0x004</addressOffset>
+					<access>read-write</access>
+					<resetValue>0xFF</resetValue>
+					<resetMask>0xFFFFFFFF</resetMask>
+					<fields>
+						<field>
+							<name>Count</name>
+							<description>Watchdog time-out interval.</description>
+							<bitRange>[31:0]</bitRange>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>FEED</name>
+					<description>Watchdog feed sequence register. Writing 0xAA followed by 0x55 to this register reloads the Watchdog timer with the value contained in WDTC.</description>
+					<addressOffset>0x008</addressOffset>
+					<access>write-only</access>
+					<resetValue>0</resetValue>
+					<resetMask>0x00000000</resetMask>
+					<fields>
+						<field>
+							<name>Feed</name>
+							<description>Feed value should be 0xAA followed by 0x55.</description>
+							<bitRange>[7:0]</bitRange>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>TV</name>
+					<description>Watchdog timer value register. This register reads out the current value of the Watchdog timer.</description>
+					<addressOffset>0x00C</addressOffset>
+					<access>read-only</access>
+					<resetValue>0xFF</resetValue>
+					<resetMask>0xFFFFFFFF</resetMask>
+					<fields>
+						<field>
+							<name>Count</name>
+							<description>Counter timer value.</description>
+							<bitRange>[31:0]</bitRange>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>CLKSEL</name>
+					<description>Watchdog clock select register.</description>
+					<addressOffset>0x010</addressOffset>
+					<access>read-write</access>
+					<resetValue>0</resetValue>
+					<resetMask>0xFFFFFFFF</resetMask>
+					<fields>
+						<field>
+							<name>CLKSEL</name>
+							<description>Selects source of WDT clock</description>
+							<bitRange>[1:0]</bitRange>
+							<enumeratedValues>
+								<name>ENUM</name>
+								<enumeratedValue>
+									<name>IRC</name>
+									<description>IRC</description>
+									<value>0x0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>PCLK</name>
+									<description>Peripheral clock</description>
+									<value>0x1</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>RTCOSC</name>
+									<description>RTC oscillator</description>
+									<value>0x2</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>RESERVED</name>
+									<description>Reserved.</description>
+									<isDefault>true</isDefault>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>RESERVED</name>
+							<description>Reserved, user software should not write ones to reserved bits. The value read from a reserved bit is not defined.</description>
+							<bitRange>[30:1]</bitRange>
+						</field>
+						<field>
+							<name>LOCK</name>
+							<description>If this bit is set to one writing to this register does not affect bit 0. The clock source can only be changed by first clearing this bit, then writing the new value of bit 0.</description>
+							<bitRange>[31:31]</bitRange>
+							<enumeratedValues>
+								<name>ENUM</name>
+								<enumeratedValue>
+									<name>UNLOCKED</name>
+									<description>This bit is set to 0 on any reset. It cannot be cleared by software.</description>
+									<value>0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>LOCKED</name>
+									<description>Software can set this bit to 1 at any time. Once WDLOCK is set, the bits of this register
+										cannot be modified.</description>
+									<value>1</value>
+								</enumeratedValue>
+							</enumeratedValues>1
+						</field>
+					</fields>
+				</register>
+				
+			</registers>
+		</peripheral>
+	</peripherals>
+</device>
