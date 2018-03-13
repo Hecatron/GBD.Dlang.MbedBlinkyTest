@@ -80,6 +80,16 @@ The -gc option is important so that we can single step / debug the D code within
   * https://forum.dlang.org/thread/op.u9gqy1z5tuzx1w@cybershadow.mshome.net
 
 
+### Compiler Flags
+
+  * **-gc** - This causes the compiler to add in debugger info that's compatible with regular C tools
+  * **-BetterC** - This results in the runtime being stripped from the resultant object file, but limits the feature set
+  * **-c** - prevents linking?
+
+TODO can we try building without -BetterC to see what the size will be like?
+
+
+
 ## Flashing the source
 
 This can be done within Visual Studio Code by using the "launch" mode of the GDB Cortex-M plugin

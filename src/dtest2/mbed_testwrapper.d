@@ -10,8 +10,8 @@ extern(C)
         void write(int value);
         int read();
         int is_connected();
-	this(int pin);
-	this(int pin, int value);
+	    //this(int pin);
+	    //this(int pin, int value);
     }
 
     // Basic C function calls to wait a fixed period of time

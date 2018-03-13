@@ -12,7 +12,8 @@ TODO try setting up an example that doesn't use BetterC to check the linking
 
   * http://rainers.github.io/visuald/visuald/CppConversion.html
   * https://github.com/adamdruppe/tools/blob/7d077b26d991dd5705e834900f66bea737a233b2/dtoh.d
-
+  * https://code.dlang.org/
+  * http://derelictorg.github.io/
 
 ## Options
 

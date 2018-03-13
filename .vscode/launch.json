@@ -17,7 +17,7 @@
         {
             "name": "Debug (OpenOCD USB) - Cortex GDB",
             "type": "cortex-debug",
-            "request": "attach",
+            "request": "launch",
             "device": "LPC176x5x",
             "servertype": "openocd",
             "cwd": "${workspaceRoot}",
@@ -38,7 +38,8 @@
             "gdbpath": "arm-none-eabi-gdb.exe",
             "autorun": [
                 "monitor reset halt",
-                "load ./BUILD/LPC1768/GCC_ARM/GBD.Dlang.MbedBlinkyTest.elf"
+                "load ./BUILD/LPC1768/GCC_ARM/GBD.Dlang.MbedBlinkyTest.elf",
+                "monitor arm semihosting enable"
              ]
         },
         {
@@ -52,7 +53,8 @@
             "gdbpath": "arm-none-eabi-gdb.exe",
             "autorun": [
                 "monitor reset halt",
-                "load ./BUILD/LPC1768/GCC_ARM/GBD.Dlang.MbedBlinkyTest.elf"
+                "load ./BUILD/LPC1768/GCC_ARM/GBD.Dlang.MbedBlinkyTest.elf",
+                "monitor semihosting enable"
              ]
         },
     ]

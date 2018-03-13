@@ -3,13 +3,15 @@
 # Those commented out will be included, those uncommented will be excluded
 
 # Ignore the c source demo
-src/ctest1/
+#src/ctest1/
 
 # D Test 1 - simple blinky
-#src/dtest1/
+src/dtest1/
 
 # D Test 1 - creation of a class
 src/dtest2/
+
+src/classtest1/
 
 # Ignore any d source code files for the mbed build
 *.d
@@ -22,15 +24,15 @@ todo/
 # Turn off RTOS, makes debugging easier for simple code
 
 # rtos seems to be the trigger for the breakpoint / lockup
-mbed-os/rtos/*
-mbed-os/features/FEATURE_LWIP/*
-mbed-os/features/frameworks/*
-mbed-os/features/netsocket/*
+#mbed-os/rtos/*
+#mbed-os/features/FEATURE_LWIP/*
+#mbed-os/features/frameworks/*
+#mbed-os/features/netsocket/*
 
 # Can be included / not excluded if needed
-mbed-os/features/net/*
-mbed-os/events/*
-mbed-os/features/FEATURE_COMMON_PAL/*
-mbed-os/features/storage/*
-mbed-os/features/FEATURE_CLIENT/*
-mbed-os/features/FEATURE_UVISOR/*
+#mbed-os/features/net/*
+#mbed-os/events/*
+#mbed-os/features/FEATURE_COMMON_PAL/*
+#mbed-os/features/storage/*
+#mbed-os/features/FEATURE_CLIENT/*
+#mbed-os/features/FEATURE_UVISOR/*

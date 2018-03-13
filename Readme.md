@@ -63,6 +63,4 @@ Although I've also been using a JLink Segger adapter as well.
   * https://wiki.dlang.org/Runtime_internals
   * https://dlang.org/spec/cpp_interface.html#lifetime-management
   * https://stackoverflow.com/questions/20893471/calling-c-from-d
-  * https://code.dlang.org/
-  * http://derelictorg.github.io/
   * https://github.com/JinShil/stm32f42_discovery_demo

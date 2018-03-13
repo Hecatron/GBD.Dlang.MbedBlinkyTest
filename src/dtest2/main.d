@@ -13,29 +13,31 @@ int d_main() {
     // https://stackoverflow.com/questions/20893471/calling-c-from-d
     // We need a class constructor on the C++ code side
 
-    DigitalOut led1 = new DigitalOut(PinName.P0_22);
-    DigitalOut led2 = new DigitalOut(PinName.P3_26);
-    DigitalOut led3 = new DigitalOut(PinName.P3_25);
+    DigitalOut led1 = new DigitalOut();
 
-    // This turns LED's off
-    led1.write(true);
-    led2.write(true);
-    led3.write(true);
+    //DigitalOut led1 = new DigitalOut(PinName.P0_22);
+    //DigitalOut led2 = new DigitalOut(PinName.P3_26);
+    //DigitalOut led3 = new DigitalOut(PinName.P3_25);
 
-    // Blink each RGB led
-    while (true) {
-        blink(led1);
-        blink(led2);
-        blink(led3);
-    }
+    // // This turns LED's off
+    // led1.write(true);
+    // led2.write(true);
+    // led3.write(true);
+
+    // // Blink each RGB led
+    // while (true) {
+    //     blink(led1);
+    //     blink(led2);
+    //     blink(led3);
+    // }
 
     return 0;
 }
 
-void blink(DigitalOut ledval)
-{
-    ledval.write(false);
-    wait(1);
-    ledval.write(true);
-    wait(1);
-}
+// void blink(DigitalOut ledval)
+// {
+//     ledval.write(false);
+//     wait(1);
+//     ledval.write(true);
+//     wait(1);
+// }
