@@ -1,26 +1,3 @@
-
-# Switch between different source codes
-# Those commented out will be included, those uncommented will be excluded
-
-# Ignore the c source demo
-#src/ctest1/
-
-# D Test 1 - simple blinky
-src/dtest1/
-
-# D Test 1 - creation of a class
-src/dtest2/
-
-src/classtest1/
-
-# Ignore any d source code files for the mbed build
-*.d
-
-# Ignore docs and scripts
-docs/
-scripts/
-todo/
-
 # Turn off RTOS, makes debugging easier for simple code
 
 # rtos seems to be the trigger for the breakpoint / lockup

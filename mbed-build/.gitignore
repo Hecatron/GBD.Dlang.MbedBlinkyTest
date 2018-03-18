@@ -1,0 +1,8 @@
+# mbed library downloaded outside of the project with "mbed deploy"
+mbed-os/
+
+# build directory
+BUILD/
+
+# local mbed configuration
+#.mbed

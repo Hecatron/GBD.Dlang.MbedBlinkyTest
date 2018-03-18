@@ -1,0 +1,26 @@
+
+// Select SWD
+si 1
+
+// Select Device
+device STM32F767ZI
+
+// Select Speed
+speed 4000
+
+// Erase
+//erase
+
+// Load hex file
+loadfile mbed-build/BUILD/NUCLEO_F767ZI/GCC_ARM/mbed-build.hex
+
+// Reset
+r
+
+// Go / Start running
+//g
+
+// Halt
+//h
+
+exit

@@ -1,14 +1,7 @@
-# mbed library downloaded outside of the project with "mbed deploy"
-mbed-os/
-
-# build directory
-BUILD/
+# C++ / D build files
 *.o
 
 # Compiled py files
 *.py*
-
-# local mbed configuration
-#.mbed
 
 todo/

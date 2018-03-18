@@ -10,8 +10,9 @@
             "request": "launch",
             "servertype": "jlink",
             "cwd": "${workspaceRoot}",
-            "executable": "./BUILD/LPC1768/GCC_ARM/GBD.Dlang.MbedBlinkyTest.elf",
-            "device": "LPC1769",
+	        "svdFile": "${workspaceFolder}/scripts/svd/STM32F7x7.svd",
+            "executable": "./mbed-build/BUILD/NUCLEO_F767ZI/GCC_ARM/mbed-build.elf",
+            "device": "STM32F767ZI",
             "interface": "swd",
         },
         {
@@ -21,24 +22,24 @@
             "device": "LPC176x5x",
             "servertype": "openocd",
             "cwd": "${workspaceRoot}",
-            "svdFile": "${workspaceFolder}/scripts/svd/LPC176x5x_v0.2.svd",
-            "executable": "./BUILD/LPC1768/GCC_ARM/GBD.Dlang.MbedBlinkyTest.elf",
+            "svdFile": "${workspaceFolder}/scripts/svd/STM32F7x7.svd",
+            "executable": "./mbed-build/BUILD/NUCLEO_F767ZI/GCC_ARM/mbed-build.elf",
             "configFiles": [
-                "${workspaceRoot}/scripts/openocd_configs/usb_boardconf.cfg"
+                "${workspaceRoot}/scripts/openocd_configs/usb_boardconf_stlink.cfg"
             ]
         },
         {
             "name": "Debug (OpenOCD USB) - Attach to GDB",
             "type": "gdb",
             "request": "attach",
-            "executable": "${workspaceRoot}/BUILD/LPC1768/GCC_ARM/GBD.Dlang.MbedBlinkyTest.elf",
+            "executable": "${workspaceRoot}/mbed-build/BUILD/NUCLEO_F767ZI/GCC_ARM/mbed-build.elf",
             "target": ":3333",
             "remote": true,
             "cwd": "${workspaceRoot}",
             "gdbpath": "arm-none-eabi-gdb.exe",
             "autorun": [
                 "monitor reset halt",
-                "load ./BUILD/LPC1768/GCC_ARM/GBD.Dlang.MbedBlinkyTest.elf",
+                "load ./mbed-build/BUILD/NUCLEO_F767ZI/GCC_ARM/mbed-build.elf",
                 "monitor arm semihosting enable"
              ]
         },
@@ -46,15 +47,16 @@
             "name": "Debug (JLink Segger) - Attach to GDB",
             "type": "gdb",
             "request": "attach",
-            "executable": "${workspaceRoot}/BUILD/LPC1768/GCC_ARM/GBD.Dlang.MbedBlinkyTest.elf",
+            "executable": "${workspaceRoot}/mbed-build/BUILD/NUCLEO_F767ZI/GCC_ARM/mbed-build.elf",
             "target": ":2331",
             "remote": true,
             "cwd": "${workspaceRoot}",
             "gdbpath": "arm-none-eabi-gdb.exe",
             "autorun": [
-                "monitor reset halt",
-                "load ./BUILD/LPC1768/GCC_ARM/GBD.Dlang.MbedBlinkyTest.elf",
-                "monitor semihosting enable"
+                "load ./mbed-build/BUILD/NUCLEO_F767ZI/GCC_ARM/mbed-build.elf",
+                "monitor semihosting enable",
+                "monitor reset",
+                "monitor halt"
              ]
         },
     ]

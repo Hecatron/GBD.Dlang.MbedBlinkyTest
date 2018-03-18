@@ -1,0 +1,7 @@
+{
+   "target_overrides": {
+        "*": {
+	    "target.OUTPUT_EXT": "hex"
+        }
+    }
+}

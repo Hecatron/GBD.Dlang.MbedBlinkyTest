@@ -16,17 +16,12 @@ TODO
 There's some documentation within the docs directory for setting everything up / notes I've made so far
 To build the source for dtest1
 
-First edit the .mbedignore file
-mbed will try to automatically compile any cpp files it finds, and link in any .o files it finds unless told to ignore them
-so comment out anything you want included, and uncomment anything to be ignored.
-
-
-Next open a command line window
+Open a command line window
 ```
 # Build the source
 cd src\dtest1
-build_dsource.bat
-build_mbed.bat
+build.py clean
+build.py build
 ```
 
 Next open a second command line window
@@ -47,13 +42,19 @@ add any breakpoints wanted.
 Then select start debugging from the menu
 
 
-## Board
+## Board 1
 
 The board I'm testing with is the LPC1769 Xpresso with CMSIS-DAP
 This is the newer one that allows debugging by using openocd on the host via the CMSIS-DAP interface on the board
 Although I've also been using a JLink Segger adapter as well.
 
   * https://www.embeddedartists.com/products/lpcxpresso/lpc1769_cmsis_xpr.php
+
+## Board 
+
+The second board I'm using is a STM32F767ZI / ST NUCLEO-F767ZI-144
+
+  * http://www.st.com/en/evaluation-tools/nucleo-f767zi.html
 
 ## DLang Links
 
