@@ -10,7 +10,6 @@ TODO
 
   * Easy way to access the mbed class api from within D?
 
-
 ## Basic run through
 
 There's some documentation within the docs directory for setting everything up / notes I've made so far

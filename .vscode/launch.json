@@ -16,10 +16,25 @@
             "interface": "swd",
         },
         {
+            "name": "Debug (JLink Segger) - Attach to GDB",
+            "type": "gdb",
+            "request": "attach",
+            "executable": "${workspaceRoot}/mbed-build/BUILD/NUCLEO_F767ZI/GCC_ARM/mbed-build.elf",
+            "target": ":2331",
+            "remote": true,
+            "cwd": "${workspaceRoot}",
+            "gdbpath": "arm-none-eabi-gdb.exe",
+            "autorun": [
+                "load ./mbed-build/BUILD/NUCLEO_F767ZI/GCC_ARM/mbed-build.elf",
+                "monitor semihosting enable",
+                "monitor reset"
+             ]
+        },
+        {
             "name": "Debug (OpenOCD USB) - Cortex GDB",
             "type": "cortex-debug",
             "request": "launch",
-            "device": "LPC176x5x",
+            "device": "STM32F767ZI",
             "servertype": "openocd",
             "cwd": "${workspaceRoot}",
             "svdFile": "${workspaceFolder}/scripts/svd/STM32F7x7.svd",
@@ -38,25 +53,8 @@
             "cwd": "${workspaceRoot}",
             "gdbpath": "arm-none-eabi-gdb.exe",
             "autorun": [
-                "monitor reset halt",
                 "load ./mbed-build/BUILD/NUCLEO_F767ZI/GCC_ARM/mbed-build.elf",
                 "monitor arm semihosting enable"
-             ]
-        },
-        {
-            "name": "Debug (JLink Segger) - Attach to GDB",
-            "type": "gdb",
-            "request": "attach",
-            "executable": "${workspaceRoot}/mbed-build/BUILD/NUCLEO_F767ZI/GCC_ARM/mbed-build.elf",
-            "target": ":2331",
-            "remote": true,
-            "cwd": "${workspaceRoot}",
-            "gdbpath": "arm-none-eabi-gdb.exe",
-            "autorun": [
-                "load ./mbed-build/BUILD/NUCLEO_F767ZI/GCC_ARM/mbed-build.elf",
-                "monitor semihosting enable",
-                "monitor reset",
-                "monitor halt"
              ]
         },
     ]
