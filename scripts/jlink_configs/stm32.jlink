@@ -12,7 +12,7 @@ speed 4000
 //erase
 
 // Load hex file
-loadfile mbed-build/BUILD/NUCLEO_F767ZI/GCC_ARM/mbed-build.hex
+loadfile mbed-build/BuildOut/mbed-build.hex
 
 // Reset
 r

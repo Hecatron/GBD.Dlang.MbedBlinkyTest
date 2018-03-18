@@ -11,7 +11,7 @@
             "servertype": "jlink",
             "cwd": "${workspaceRoot}",
 	        "svdFile": "${workspaceFolder}/scripts/svd/STM32F7x7.svd",
-            "executable": "./mbed-build/BUILD/NUCLEO_F767ZI/GCC_ARM/mbed-build.elf",
+            "executable": "./mbed-build/BuildOut/mbed-build.elf",
             "device": "STM32F767ZI",
             "interface": "swd",
         },
@@ -19,13 +19,13 @@
             "name": "Debug (JLink Segger) - Attach to GDB",
             "type": "gdb",
             "request": "attach",
-            "executable": "${workspaceRoot}/mbed-build/BUILD/NUCLEO_F767ZI/GCC_ARM/mbed-build.elf",
+            "executable": "${workspaceRoot}/mbed-build/BuildOut/mbed-build.elf",
             "target": ":2331",
             "remote": true,
             "cwd": "${workspaceRoot}",
             "gdbpath": "arm-none-eabi-gdb.exe",
             "autorun": [
-                "load ./mbed-build/BUILD/NUCLEO_F767ZI/GCC_ARM/mbed-build.elf",
+                "load ./mbed-build/BuildOut/mbed-build.elf",
                 "monitor semihosting enable",
                 "monitor reset"
              ]
@@ -38,7 +38,7 @@
             "servertype": "openocd",
             "cwd": "${workspaceRoot}",
             "svdFile": "${workspaceFolder}/scripts/svd/STM32F7x7.svd",
-            "executable": "./mbed-build/BUILD/NUCLEO_F767ZI/GCC_ARM/mbed-build.elf",
+            "executable": "./mbed-build/BuildOut/mbed-build.elf",
             "configFiles": [
                 "${workspaceRoot}/scripts/openocd_configs/usb_boardconf_stlink.cfg"
             ]
@@ -47,13 +47,13 @@
             "name": "Debug (OpenOCD USB) - Attach to GDB",
             "type": "gdb",
             "request": "attach",
-            "executable": "${workspaceRoot}/mbed-build/BUILD/NUCLEO_F767ZI/GCC_ARM/mbed-build.elf",
+            "executable": "${workspaceRoot}/mbed-build/BuildOut/mbed-build.elf",
             "target": ":3333",
             "remote": true,
             "cwd": "${workspaceRoot}",
             "gdbpath": "arm-none-eabi-gdb.exe",
             "autorun": [
-                "load ./mbed-build/BUILD/NUCLEO_F767ZI/GCC_ARM/mbed-build.elf",
+                "load ./mbed-build/BuildOut/mbed-build.elf",
                 "monitor arm semihosting enable"
              ]
         },

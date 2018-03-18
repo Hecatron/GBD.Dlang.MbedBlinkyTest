@@ -2,7 +2,7 @@
 mbed-os/
 
 # build directory
-BUILD/
+BuildOut/
 
 # local mbed configuration
 #.mbed

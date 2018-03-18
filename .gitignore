@@ -2,6 +2,6 @@
 *.o
 
 # Compiled py files
-*.py*
+*.pyc
 
 todo/
