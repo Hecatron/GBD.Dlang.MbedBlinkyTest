@@ -1,27 +1,20 @@
 # Building the source
 
-## .mbedignore file
-
 Generally when calling the "mbed compile" command
 mbed will look for any c / cpp files from the source root down and automatically try to compile them / include them into the final binary
 For any .o built files, these will also be automatically linked in without specifying.
 
-To control what we want built we can use a file called .mbedignore
-This operates similar to .gitignore, in that we can just exclude anything we don't want compiled or included into the built firmware.
+The build scripts here ares setup to copy files into mbed-build\src-bld
+then run mbed compile from the mbed-build directory
 
-For example to use the code under dtest1, but ignore dtest2
-```
-# D Test 1 - simple blinky
-#src/dtest1/
+.mbedignore can be used to ignore certain files to build if needed
 
-# D Test 1 - creation of a class
-src/dtest2/
-```
 
-### Disabling the mbed RTOS
+## Disabling the mbed RTOS
 
 By default mbed includes a Real Time OS for multiple threads etc.
-In this case to keep things simple from a debugging point of view we can turn that off by including the following into the .mbedignore file
+To get the code size / compile time down
+we can include the following into the .mbedignore file
 
   * https://os.mbed.com/blog/entry/Reducing-memory-usage-by-tuning-RTOS-con/
 
@@ -38,14 +31,15 @@ mbed-os/features/storage/*
 mbed-os/events/*
 ```
 
-### Issue with RTOS
 
-For some reason I'm seeing a lockup / forced breakpoint (SIGBREAK) when using the RTOS and calling wait
-this might be related to DEVICE_SEMIHOST
+## Issue with RTOS
+
+There seems to be a bit of a bug at least for the LPC1769 associated with debugging and mbed_os
+since I'm now using a STM32 device I'm ignoring this for now
 
   * https://github.com/ARMmbed/mbed-os/issues/6317
 
-Current workaround is to make sure the below is excluded at bare minimum
+Current workaround is to make sure the below is excluded at bare minimum for LPC1769
 ```
 mbed-os/rtos/*
 mbed-os/features/FEATURE_LWIP/*
@@ -56,22 +50,26 @@ mbed-os/features/netsocket/*
 
 ## Building the Source
 
-There's a couple of simple scripts to build the source
-make sure to build D first, so that the mbed build can pick up on the generates object files
+There's a simple script to build the source
 
 ```
 cd src\dtest1
-build_dsource.bat
-build_mbed.bat
+build.py clean
+build.py build
 ```
 
 The end result should be within:
 ```
-.\BUILD\LPC1768\GCC_ARM\GBD.Dlang.MbedBlinkyTest.bin
-.\BUILD\LPC1768\GCC_ARM\GBD.Dlang.MbedBlinkyTest.elf
+mbed-build\BuildOut\mbed-build.bin
+mbed-build\BuildOut\mbed-build.elf
+mbed-build\BuildOut\mbed-build.hex
 ```
 
-THe build script is actually running
+elf files and hex files both contain memory address's for where the code should sit
+bin files need an offset sometimes to say what address they start from
+I've enabled hex output for easier use with JLink
+
+The build script for Dlang is actually running
 ```
 ldc2 -gc -mtriple=thumb-none-linux-eabi -mcpu=cortex-m3 --od=. -c -betterC main.d
 ```
@@ -84,7 +82,7 @@ The -gc option is important so that we can single step / debug the D code within
 
   * **-gc** - This causes the compiler to add in debugger info that's compatible with regular C tools
   * **-BetterC** - This results in the runtime being stripped from the resultant object file, but limits the feature set
-  * **-c** - prevents linking?
+  * **-c** - prevents linking
 
 TODO can we try building without -BetterC to see what the size will be like?
 
@@ -93,7 +91,8 @@ TODO can we try building without -BetterC to see what the size will be like?
 ## Flashing the source
 
 This can be done within Visual Studio Code by using the "launch" mode of the GDB Cortex-M plugin
-or by calling the script
+or by calling one of the scripts
 ```
-scripts\openocd_startserver.bat
+scripts\jlink_flash.bat
+scripts\openocd_flash.bat
 ```
